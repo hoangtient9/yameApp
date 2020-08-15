@@ -1,0 +1,13 @@
+.Logo {
+  height: 100%;
+  border-radius: 5px;
+  background: #000;
+  
+  img {
+    height: 100%;
+  }
+  
+  @media (min-width: 60rem) {
+    padding: 8px;
+  }
+}

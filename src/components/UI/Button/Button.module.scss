@@ -1,0 +1,59 @@
+.Button {
+    border: none;
+	width: 150px;
+    height: 50px;
+    outline: none;
+	border-radius: 10px;
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-size: 0.9rem;
+	margin: 10px;
+	cursor: pointer;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.008),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.012), 0 12.5px 10px rgba(0, 0, 0, 0.015),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.018), 0 41.8px 33.4px rgba(0, 0, 0, 0.022),
+        0 100px 80px rgba(0, 0, 0, 0.03);
+
+    &:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
+    }
+
+
+    &:first-of-type {
+        margin-left: 0;
+    }
+
+    &:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+    }
+}
+
+.Success {
+    background: #445fe7;
+    color: #fff;
+}
+
+.Danger {
+    background: #ff3e3e;
+	color: #ffffff;
+}
+
+.BtnAuth {
+    border-radius: 3px;
+    background: #944317;
+    color: white;
+    box-shadow: 2px 2px 3px #966909;
+
+    &:first-of-type {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    &:disabled {
+        border: 1px solid #ccc;
+        color: #888;
+        background: #C7C6C6;
+        cursor: not-allowed;
+    }
+}

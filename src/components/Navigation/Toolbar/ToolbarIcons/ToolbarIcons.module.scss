@@ -1,0 +1,96 @@
+.ToolbarIcons {
+    display: flex;
+    align-items: center;
+    > ul {
+        display: flex;
+        padding: 0;
+        list-style: none;
+
+        > li {
+            margin-left: 10px;
+            cursor: pointer;
+
+            > span {
+                color: #868995;
+            }
+
+            > a {
+                color: #868995;
+            }
+        }
+
+        > .dropdown {
+
+            > .dropdownContent {
+                min-width: 150px;
+                position: absolute;
+                display: none;
+                background: #868995;
+                border-top: 2px solid #ee4266;
+
+                > ul {
+                    width: 100%;
+                    list-style: none;
+                    padding: 10px;
+
+                    > li {
+                        width: 100%;
+                        padding-bottom: 5px;
+
+                        > a {
+                            text-decoration: none;
+                            color: #000;
+
+                            &:hover {
+                                color: #f3f3f4;
+                            }
+                        }
+                    }
+                }
+            }
+
+            > .dropdownShow {
+                display: block;
+            }
+        }
+
+        > li:last-child {
+            > a {
+                position: relative;
+
+                > div {
+                    position: absolute;
+                    top: -17px;
+                    right: -15px;
+                    background: #ee4266;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    font-size: 12px;
+                    overflow: hidden;
+                    font-weight: bold;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #f9f9f9;
+                }
+            }
+        }
+    }
+
+    > div {
+        margin-left: 20px;
+        cursor: pointer;
+
+        > span {
+            color: #868995;
+            font-size: 30px;
+        }
+
+        @media (min-width: 60rem) {
+            display: none;
+        }
+    }
+    
+}

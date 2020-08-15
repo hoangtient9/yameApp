@@ -1,0 +1,39 @@
+.NavigationItem {
+    display: block;
+    width: 100%;
+    align-items: center;
+    
+    > a {
+        display: block;
+        padding: 16px 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        text-align: center;
+        color: #868995;
+
+        &:hover,
+        &:active,
+        &.active {
+            color: #039be5;
+        }
+    }
+
+    @media (min-width: 60rem) {
+        display: flex;
+        width: auto;
+        margin: 0;
+        margin: 10px 0;
+
+        > a {
+            font-size: 1rem;
+            color: #f3f3f4;
+    
+            &:hover,
+            &:active,
+            &.active {
+                color: #868995;
+            }
+        }
+    }
+}

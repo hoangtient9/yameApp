@@ -1,0 +1,46 @@
+.Carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+
+  &:hover {
+    border-radius: 5px;
+   }
+}
+
+.Slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &:hover {
+    border-radius: 5px;
+   }
+
+  img {
+    width: 100%;
+
+    &:hover {
+     border-radius: 5px;
+    }
+  }
+}
+
+.enter {
+  left: 100%;
+}
+
+.enterActive {
+  left: 0;
+}
+
+.exitActive {
+  left: -100%;
+
+}
+
+.firstRun {
+  transition: left 1s ease-in-out;
+}

@@ -1,0 +1,19 @@
+.AddPoster {
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #eee;
+    box-shadow: 0  2px 3px #ccc;
+    font: inherit;
+
+    > h4 {
+        width: 100%;
+        padding-top: 20px;;
+    }
+
+    @media (min-width: 500px) {
+        width: 500px;
+    }
+
+    
+}

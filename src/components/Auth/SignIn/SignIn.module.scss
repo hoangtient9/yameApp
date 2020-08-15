@@ -1,0 +1,27 @@
+.SignIn {
+    width: 100%;
+    flex-shrink: 0;
+
+    > h4 {
+        text-transform: uppercase;
+    }
+
+    > form {
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    > .forgot {
+        height: 100px;
+        padding-top: 24px;
+
+        > p {
+            cursor: pointer;
+            width: 100%;
+
+            &:hover {
+                color: blue;
+            }
+        }
+    }  
+}

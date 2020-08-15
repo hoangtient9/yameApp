@@ -1,0 +1,36 @@
+.SideDrawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    display: flex;
+    flex-flow: column;
+    width: 300px;
+    height: calc(100vh);
+    background: white;
+    transition: transform 0.5s ease-out;
+
+    > div {
+        height: 60px;
+        background: #000;
+
+        > span {
+            height: 100%;
+            font-size: 54px;
+            float: right;
+            color: white;;
+        }
+    }
+
+    @media (min-width: 60rem) {
+        display: none;
+    }
+}
+
+.Open {
+    transform: translateX(0);
+}
+
+.Close {
+    transform: translateX(100%);
+}

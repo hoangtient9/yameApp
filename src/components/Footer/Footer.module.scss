@@ -1,0 +1,36 @@
+.Footer {
+    background: #111;
+    width: 100%;  
+
+    > div {
+        max-width: 1140px;
+        display: flex;
+        flex-flow: column;
+        margin: 0 auto;
+        justify-content: center;
+
+        @media (min-width: 40rem) {
+            flex-flow: row;
+        }
+
+        > div {
+            width: 100%;
+            > .FooterLogo {
+                height: 95px;
+                padding: 15px 10px 0px;
+
+                > div {
+                    background: #111;
+                }
+            }
+
+            @media (min-width: 40rem) {
+                width: 30%; 
+            }
+        }
+    }
+
+    @media (min-width: 40rem) {
+        height: auto;
+    }
+}

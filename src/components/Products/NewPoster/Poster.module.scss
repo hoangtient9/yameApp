@@ -1,0 +1,55 @@
+.Poster {
+    width: 100%;
+    display: flex;
+    margin-top: 15px;
+    flex-flow: wrap;
+    justify-content: center;
+
+    .PosterItem {
+        width: 100%;
+        padding: 0px 10px 15px;
+        
+        > div {
+            width: 100%;
+
+            > h4 {
+                text-align: left;
+                font-weight: normal;
+                font-size: 1.5rem;
+                color: #444;
+                text-transform: uppercase;
+            }
+
+            > img {
+                width: 100%;
+            }
+        }
+
+        .ListImage {
+            display: flex;
+
+            > div {
+                width: 25%;
+                padding: 10px;
+                flex: 1;
+
+                > img {
+                    width: 100%;
+                }
+            }
+
+            > div:first-child {
+                padding-left: 0;
+            }
+
+            > div:last-child {
+                padding-right: 0;
+            }
+        }
+
+        @media (min-width: 40rem) {
+            width: 50%;
+        }
+    }
+}
+

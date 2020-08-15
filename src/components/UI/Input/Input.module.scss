@@ -1,0 +1,49 @@
+.Input {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+
+    > input {
+        outline: none;
+    };
+
+    > .Label {
+        display: block;
+        color: #495057;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    > .InputElement {
+        display: block;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        width: 100%;
+        color: #495057;
+        height: 43px;
+        padding: 6px 10px;
+        outline: none;
+        transition: all 0.15s ease-in-out;
+        font: inherit;
+    }
+
+    > textarea {
+        overflow: auto;
+        resize: vertical;
+    }
+
+    .InputElement::-webkit-inner-spin-button, 
+    .InputElement::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+
+    .InValid {
+        border: 1px solid #ee4266;
+    }
+}
+
+
+
+
+
