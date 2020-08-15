@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useCallback } from 'react';
+import React, { Fragment, useEffect, useCallback, memo } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
 import Poster from '../../components/Products/NewPoster/Poster';
@@ -10,7 +10,7 @@ import axios from '../../axios';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import NotFound from '../../components/NotFound/NotFound';
 
-const Home = props => {
+const Home = memo(props => {
     const dispatch = useDispatch();
     const onFetchProducts = useCallback(() => dispatch(actions.fetchProducts()), [dispatch]);
 
@@ -44,6 +44,6 @@ const Home = props => {
     }
 
     return home
-}
+})
 
 export default withErrorHandler(Home, axios);

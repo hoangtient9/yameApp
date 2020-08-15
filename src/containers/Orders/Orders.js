@@ -1,4 +1,4 @@
-import React, {useEffect, useCallback} from 'react';
+import React, {useEffect, useCallback, memo} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
 import axios from '../../axios';
@@ -8,7 +8,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import NotFound from '../../components/NotFound/NotFound';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
-const Orders = props => {
+const Orders = memo(props => {
     const dispatch = useDispatch();
     const onFetchOrders = useCallback((token, userId) => dispatch(actions.fetchOrders(token, userId)), [dispatch]);
 
@@ -29,6 +29,6 @@ const Orders = props => {
         orders = <NotFound>No Orders Found</NotFound>
     }
     return orders
-}
+})
 
 export default withErrorHandler(Orders, axios);

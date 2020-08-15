@@ -1,4 +1,4 @@
-import React, {useCallback, Fragment} from 'react';
+import React, {useCallback, Fragment, memo} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
@@ -6,7 +6,7 @@ import * as actions from '../../store/actions/index';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
 import AuthCompoment from '../../components/Auth/Auth';
-const Auth = props => {
+const Auth = memo(props => {
     const dispatch = useDispatch();
 
     const loading = useSelector(state => state.auth.loading);
@@ -30,6 +30,6 @@ const Auth = props => {
             {auth}
         </Fragment>
     )
-}
+})
 
 export default Auth;

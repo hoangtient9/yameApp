@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useCallback, useState } from 'react';
+import React, { Fragment, useEffect, useCallback, useState, memo } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import NotFound from '../../components/NotFound/NotFound';
 import Button from '../../components/UI/Button/Button';
 
-const Search = props => {
+const Search = memo(props => {
     const location = useLocation();
     const dispatch = useDispatch();
     const onFetchSearch = useCallback((type, query, oldProducts, lastProduct) => dispatch(actions.fetchSearch(type, query, oldProducts, lastProduct)), [dispatch]);
@@ -68,6 +68,6 @@ const Search = props => {
         search = <NotFound>No products found</NotFound>
     }
     return search
-}
+})
 
 export default withErrorHandler(Search, axios)

@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useEffect } from 'react';
+import React, { Fragment, useCallback, useEffect, memo } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import * as actions from '../../store/actions/index';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
-const ProductInfo = props => {
+const ProductInfo = memo(props => {
 
     const history = useHistory();
     const dispatch = useDispatch();
@@ -67,6 +67,6 @@ const ProductInfo = props => {
         )
     }
     return productInfo
-}
+})
 
 export default withErrorHandler(ProductInfo, axios)

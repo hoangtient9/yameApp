@@ -14,7 +14,7 @@ const ToolbarIcons = props => {
         setDropdown(!dropdown)
         setTimeout(() => {
             setDropdown(false)
-        }, 3000)
+        }, 5000)
     }
 
     return (

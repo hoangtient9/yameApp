@@ -36,9 +36,7 @@ const SignIn = props => {
           value: '',
           label: 'Password',
           validation: {
-            required: true,
-            minLength: 8,
-            isPassword: true
+            required: true
           },
           valid: false,
           touched: false

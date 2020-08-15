@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useEffect } from 'react';
+import React, { Fragment, useCallback, useEffect, memo } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 
 import CheckoutData from '../../components/CheckoutData/CheckoutData';
@@ -7,7 +7,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import NotFound from '../../components/NotFound/NotFound';
 import { useHistory } from 'react-router-dom';
 
-const Checkout = props => {
+const Checkout = memo(props => {
 
     const dispatch = useDispatch();
     const onGetCheckout = useCallback(() => dispatch(actions.getCheckout()), [dispatch]);
@@ -39,6 +39,6 @@ const Checkout = props => {
     }
 
     return checkout
-}
+})
 
 export default Checkout;

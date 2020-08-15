@@ -86,18 +86,27 @@ export function* resetPasswordSaga(action) {
 
 export function* authRefreshTokenSaga(action) {
     const refreshToken = yield localStorage.getItem('refreshToken');
-    const authData = {
-        Grant_type : 'refresh_token',
-        refresh_token: refreshToken
-    }
+
     const url = 'https://securetoken.googleapis.com/v1/token?key=' + key;
 
     try {   
         if (!refreshToken) {
             yield put(actions.authLogout())
         } else {
-            const response = yield axios.post(url, authData)
-            yield put(actions.authRefreshTokenSuccess(response.data.idToken, response.data.localId))
+            const response = yield axios({
+                method: 'post',
+                headers: {'content-type': 'application/x-www-form-urlencoded'},
+                url: url,
+                data: 'grant_type=refresh_token&refresh_token=' + refreshToken,
+                json: true
+              })
+            yield put(actions.authRefreshTokenSuccess(response.data.id_token, response.data.user_id))
+            const expirationDate = new Date(new Date().getTime() + response.data.expires_in * 1000);
+            yield localStorage.setItem('idToken', response.data.id_token);
+            yield localStorage.setItem('refreshToken', response.data.refresh_token);
+            yield localStorage.setItem('expirationDate', expirationDate)
+            yield localStorage.setItem('userId', response.data.user_id)
+            yield put(actions.checkAuthTimeout(response.data.expires_in))
         }
     } 
     catch(error) {
