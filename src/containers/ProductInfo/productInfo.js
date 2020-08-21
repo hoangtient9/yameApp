@@ -40,7 +40,7 @@ const ProductInfo = memo(props => {
                     if (element.id === data.id && element.color === data.color && element.size === data.size){
                         return {
                             ...element,
-                            amount: element.amount + 1
+                            quantity: element.quantity + 1
                         }
                     }
                     return element;
